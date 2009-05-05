@@ -52,7 +52,9 @@ friend_emails['<%= friend.id %>'] = '<%= friend.email %>';
 	<h1>
 	  <%= _('Share a Web Page') %>
 	  <%= button_to_function(_('Share It!'), "validate()", {:style=>"font-weight:bold;"}) %>
+	  <% if @entry.permalink %>
 	  <%= button_to_function(_('Go Back'), "document.location='#{@entry.permalink}'", {:style=>"font-weight:bold;"}) %>
+	  <% end %>
 	</h1>
 
     <% if !@entry.permalink %>
@@ -116,7 +118,9 @@ friend_emails['<%= friend.id %>'] = '<%= friend.email %>';
 
 	<div class="row">
 	  <%= button_to_function(_('Share It!'), "validate()", {:style=>"font-weight:bold;"}) %>
+	  <% if @entry.permalink %>
 	  <%= button_to_function(_('Go Back'), "document.location='#{@entry.permalink}'", {:style=>"font-weight:bold;"}) %>
+	  <% end %>
 	</div>
 <% end %>
 
