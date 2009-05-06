@@ -13,9 +13,10 @@
 			<%= password_field_tag :password, params[:password], :onfocus => "" -%>	  	
 		</div>
 		
-		<div class="row">
-			<label for="remember_me"><%= _('Remember me') %></label> 
-			<%= check_box_tag :remember_me, "1", params[:remember_me] || nil %>	
+	    <div class="row">
+	    <!--Uncomment this if you want this functionality
+		<label for="remember_me"><%= _('Remember me') %></label> 
+			<%= check_box_tag :remember_me, "1", params[:remember_me] || nil %>	-->
 		</div>
 		
 	  <div class="button">
