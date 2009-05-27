@@ -111,7 +111,7 @@ ul#nav li .dropdown .bottom{background:url(/images/nav_dropdown_bottom.png) no-r
 #land_white_top{background-position:0 0;}
 #land_white_bottom{background-position:0 -36px;}
 #midsect{background:url(/images/mid_white_spacing.gif) repeat 0 0;width:100%;/*overflow:hidden;*/
-height:245px;padding:20px 0 0px 0;color:#333;}
+height:300px;color:#333;}
 #midsect p a{color:#333;text-decoration:none;padding:0 2px;}
 #midsect p a:hover{background:#FFF;}
 /*------------------ @helping ------------------*/
