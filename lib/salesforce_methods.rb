@@ -32,6 +32,10 @@ module SalesforceMethods
     sf_user.twb_canada__c                = bag_value('twb_canada')
     sf_user.years_teaching_experience__c = bag_value('yrs_teaching_experience')
     sf_user.employer__c                  = bag_value('organization')
+
+    sf_user.professional_role__c         = bag_value('professional_role')
+    sf_user.volunteer_interests__c       = bag_value('volunteer_interests')
+    sf_user.phone                        = bag_value('phone')
     
     # these are all preconfigured defaults
     sf_user.employer__c     = '0' # self.organization || 'not specified'
