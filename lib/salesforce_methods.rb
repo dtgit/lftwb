@@ -38,7 +38,7 @@ module SalesforceMethods
     sf_user.phone                        = bag_value('phone')
     
     # these are all preconfigured defaults
-    sf_user.employer__c     = '0' # self.organization || 'not specified'
+    # sf_user.employer__c     = '0' # self.organization || 'not specified'
     sf_user.record_type_id  = '01270000000DgFe' # type 'Member'
     sf_user.account_id      = GlobalConfig.salesforce_account_id
     sf_user.owner_id        = GlobalConfig.salesforce_owner_id
