@@ -6,9 +6,11 @@ user = feed_item.creator
 <div class="feed_item friend_feed" id="<%= feed_item.dom_id %>">
 	<div class="left">
 	  <img src="/images/blurp_groups.png" class="png icon_small" title="<%= _('Groups Icon') %>" alt="<%= _('Groups Icon') %>" /> 
+      <% if !user.nil? then %>
       <%= _("%{user} left %{group}") % 
 					{ :user => link_to(h(user.full_name), profile_path(user)), 
 						:group => link_to(h(group.name), group_path(group))} -%>. 
+      <% end %>
 	</div>
 	<div class="right">
 	  <%= x_feed_link(feed_item) %>
