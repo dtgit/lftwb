@@ -16,4 +16,7 @@
 #
 
 class BagPropertyValue < ActiveRecord::Base
+  
+acts_as_solr :fields => [ {:user_id => :integer}, :svalue, :tvalue ]
+    
 end

@@ -11,4 +11,5 @@
 #
 
 class BagPropertyEnum < ActiveRecord::Base
+  acts_as_solr :fields => [ :value ]
 end

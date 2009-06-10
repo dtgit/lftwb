@@ -26,6 +26,7 @@ ActionController::Routing::Routes.draw do |map|
     users.resources :blogs, :controller => 'users/blogs'
     users.resources :groups, :controller => 'users/groups'
     users.resources :photos, :controller => 'users/photos'
+    users.resources :member_search, :controller => 'users/member_search'
     users.resources :events, :controller => 'users/events'
     users.resources :invites, :controller => 'users/invites'
     users.resources :uploads, :controller => 'users/uploads', :collection => { :photos => :get, :images => :get, :files => :get }, 

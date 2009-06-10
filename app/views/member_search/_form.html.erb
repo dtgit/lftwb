@@ -1,0 +1,31 @@
+<div id="member_search_form">
+	<br></br><br></br>
+	<h2><%= _('Member Search Form') %></h2>
+    <% form_tag user_member_search_index_path, :method => :get do |f| %>
+	<div class="right activity_box" id="column_r">
+		<div class="form-row">
+			<%= label_tag 'country', 'Country/Region:' %>
+			<%= select("country", "id", @country.map {|role| [role.name,role.id]}, {:include_blank => '&lt;select a value&gt;', :selected => @selected_country}) %>
+		</div>
+		<div class="form-row">
+    		<%= label_tag 'language', 'Language:' %>
+			<%= select("language", "id", @language.map {|role| [role.name,role.id]}, {:include_blank => '&lt;select a value&gt;', :selected => @selected_language}) %>
+		</div>
+		<div class="form-row">
+    		<%= label_tag 'prof_role', 'Professional Role:' %>
+			<%= select("prof_role", "id", @prof_role.map {|role| [role.name,role.id]}, {:include_blank => '&lt;select a value&gt;', :selected => @selected_prof_role}) %>
+		</div>
+		<div class="form-row">
+			<%= label_tag 'name', 'Name:' %>
+			<%= text_field_tag 'name', @selected_name %>
+		</div>
+		<div class="form-row">
+			<%= label_tag 'keywords', 'Keywords:' %>
+			<%= text_field_tag 'keywords', @selected_keywords %>
+		</div>
+		<div class="button">
+	  		<%= submit_tag "Submit", :class => 'button' %>
+		</div>
+	</div>
+	<% end %>
+</div>

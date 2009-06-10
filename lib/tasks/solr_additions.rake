@@ -5,7 +5,7 @@ namespace :solr do
     
     includes = env_array_to_constants('ONLY')
     if includes.empty?
-      includes = Dir.glob("#{RAILS_ROOT}/app/models/{group,user,content_page,news_item,photo}.rb").map { |path| File.basename(path, ".rb").camelize.constantize }
+      includes = Dir.glob("#{RAILS_ROOT}/app/models/{group,user,content_page,news_item,photo,bag_property_value,bag_property_enum}.rb").map { |path| File.basename(path, ".rb").camelize.constantize }
     end
     excludes = env_array_to_constants('EXCEPT')
     includes -= excludes
@@ -29,7 +29,6 @@ namespace :solr do
     
     models = includes.select { |m| m.respond_to?(:rebuild_solr_index) }    
     models.each do |model|
-  
       if clear_first
         puts "Clearing index for #{model}..."
         ActsAsSolr::Post.execute(Solr::Request::Delete.new(:query => "type_t:#{model}")) 

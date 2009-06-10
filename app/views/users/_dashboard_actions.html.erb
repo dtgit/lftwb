@@ -16,6 +16,7 @@
 		<li><img src="/images/blurp_photos_small.png"/> <%= link_to _('Upload and Manage Photos'), user_photos_path(@user) %></li>
 		<li><img src="/images/blurp_file_small.png"/> <%= link_to _('Upload and Manage Files'), user_uploads_path(@user) %></li>
  		<li><img src="/images/blurp_thumb_small.png"/> <%= link_to _('Share a Web Page or Google Document'), '/share' %></li>
+		<li><img src="/images/blurb_search_small.png"/> <%= link_to _('Member Search'),  user_member_search_index_path(@user) %></li>
 		<% if false && is_admin? && @content_pages.empty? %>
 			<!-- <li><img src="/images/blurp_pencil_small.png"/> <%= link_to _('Write a Page'), new_user_page_path(@user) %></li> -->
 			<li><img src="/images/blurp_pencil_small.png"/> <%= link_to _('Write a Page'), new_site_page_path %></li>
