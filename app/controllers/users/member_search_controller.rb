@@ -184,7 +184,8 @@ class Users::MemberSearchController < ApplicationController
       puts "printing member search sql..."
       puts sql
       
-      @results = User.find_by_sql(sql).paginate(:page => @page, :per_page => 20)
+      @results_temp = User.find_by_sql(sql)
+      @results = @results_temp.paginate(:page => @page, :per_page => 20)
        
       flash[:notice] = @results.empty? ? _('Your search did not match any members on the website.') : nil
        
