@@ -9,7 +9,12 @@
 		<!-- don't do anything -->
 <% else %>
 	<h1><%= _("Member Search Results") %></h1>
-        <h3>Your search has returned <%= @results_temp.size.to_s %> results.</h3>
+        <% rslts_cntr = @results_temp.size %>
+	<% if rslts_cntr == 1 %>
+		<h3>Your search has returned <%= rslts_cntr.to_s %> result.</h3>
+ 	<% else %>
+		<h3>Your search has returned <%= rslts_cntr.to_s %> results.</h3>
+	<% end %>
 	<ul class='search_results'>
     	<% @results.each do |result| %>
 		    <li><%= link_to result.full_name, profile_path(result) %><%= _('(user)') %> <%= h result.why_joined %></li>
