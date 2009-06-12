@@ -5,7 +5,7 @@
 	<div class="right activity_box" id="column_r">
 		<div class="form-row">
 			<%= label_tag 'country', 'Country/Region:' %>
-			<%= select("country", "id", @country.map {|role| [role.name,role.id]}, {:include_blank => '&lt;select a value&gt;', :selected => @selected_country}) %>
+			<%= select_tag 'country[]', "<option value="">&lt;select a value/values&gt;</option>" + options_for_select(@country.sort, @selected_country), :multiple => true, :size => 5 , :selected => @selected_country %>
 		</div>
 		<div class="form-row">
     		<%= label_tag 'language', 'Language:' %>
