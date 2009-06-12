@@ -6,8 +6,16 @@ class Users::MemberSearchController < ApplicationController
   def index
     if ((params[:country] != nil) || (params[:language] != nil) || (params[:prof_role] != nil || params[:name] != nil || params[:keywords] != nil))
     
-      country = params[:country][:id]
-      @selected_country = country.empty? ? nil : country.to_i
+      country = params[:country]
+      if country != nil
+        country.delete("")
+        country = country.empty? ? nil : country
+      end
+            
+      @selected_country = Array.new
+      country.each do |c|
+        @selected_country.push(Integer(c.to_s).to_i)
+      end
       
       lang = params[:language][:id]
       @selected_language = lang.empty? ? nil : lang.to_i
@@ -141,8 +149,17 @@ class Users::MemberSearchController < ApplicationController
         end
       end
         
-      if country.empty?
-        country = "select e.id from bag_property_enums e where bag_property_id = 11"
+      cntries = ""
+      if country == nil
+        cntries = "select e.id from bag_property_enums e where bag_property_id = 11"
+      else
+        @selected_country.each do |x|
+          if cntries.empty?
+            cntries = x.to_s
+          else
+            cntries << "," + x.to_s
+          end
+        end
       end
       
       if lang.empty?
@@ -154,7 +171,7 @@ class Users::MemberSearchController < ApplicationController
       end
       
       sql = "select * from users usrs where usrs.id in (select distinct u.id from users u " + 
-            "join bag_property_values A on u.id = A.user_id and A.bag_property_enum_id IN (" + country + ") " +
+            "join bag_property_values A on u.id = A.user_id and A.bag_property_enum_id IN (" + cntries + ") " +
             "join bag_property_values B on A.user_id=B.user_id and B.bag_property_enum_id IN (" + lang + ") " +
             "join bag_property_values C on A.user_id=C.user_id and C.bag_property_enum_id IN (" + prof_role + ") " 
           
@@ -191,7 +208,11 @@ class Users::MemberSearchController < ApplicationController
        
     end
     
-    @country = BagPropertyEnum.find(:all, :conditions => ['bag_property_id = 11'], :order => "sort, name")
+    @country = Hash.new
+    countries = BagPropertyEnum.find(:all, :conditions => ['bag_property_id = 11'], :order => "sort, name")
+    countries.each do |cntry|
+      @country[cntry.name] = cntry.id
+    end
     @language = BagPropertyEnum.find(:all, :conditions => ['bag_property_id = 6'], :order => "sort, name")
     @prof_role = BagPropertyEnum.find(:all, :conditions => ['bag_property_id = 1'], :order => "sort, name")
     
