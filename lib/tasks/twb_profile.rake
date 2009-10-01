@@ -1113,59 +1113,5 @@ namespace :luvfoo do
     end
   end
     
-#  namespace :db do
-#    desc "Add fields required by TWB canada"
-#    task :add_canada_fields => :environment do
-#      bp = BagProperty.create(
-#        :name => 'teaching_license', 
-#        :label => 'Do you have an official license to teach?', 
-#        :data_type => BagProperty::DATA_TYPE_ENUM,
-#        :display_type => BagProperty::DISPLAY_TYPE_RADIO, 
-#        :required => false, 
-#        :default_visibility => BagProperty::VISIBILITY_USERS,
-#        :sort => 92 
-#      )
-#      [
-#        ['Yes','yes',10],
-#        ['No','no',20],
-#        ['Pending','pending',30],
-#        ['Other','other',40]
-#      ].each {|c| BagPropertyEnum.create(:bag_property_id => bp.id, :value => c[1], :name => c[0], :sort => c[2]) }
-#      BagProperty.create(:name => 'subject_areas', :label => 'Subject area(s) for which you are licensed', :default_visibility => BagProperty::VISIBILITY_USERS, :data_type => BagProperty::DATA_TYPE_TEXT, :display_type => BagProperty::DISPLAY_TYPE_TEXT_AREA, :sort => 94, :registration_page => 1, :required => false, :can_change_visibility => false, :maxlength => 250) 
-#      bp = BagProperty.create(
-#        :name => 'yrs_teaching_experience', 
-#        :label => 'Number of years teaching experience', 
-#        :data_type => BagProperty::DATA_TYPE_ENUM,
-#        :display_type => BagProperty::DISPLAY_TYPE_RADIO, 
-#        :required => false, 
-#        :default_visibility => BagProperty::VISIBILITY_USERS,
-#        :sort => 96 
-#      )
-#      [
-#        ['Less than one','months',10],
-#        ['1 to 4',20],
-#        ['5 to 10',30],
-#        ['11 to 15',40],
-#        ['16 to 20',50],
-#        ['Greater than 20',60],
-#        ['None','none',70]
-#      ].each {|c| BagPropertyEnum.create(:bag_property_id => bp.id, :value => c[0], :name => c[0], :sort => c[1]) }
-#      bp = BagProperty.create(
-#        :name => 'twb_canada', 
-#        :label => 'I am also registered on the TWB Canada Network:', 
-#        :data_type => BagProperty::DATA_TYPE_ENUM,
-#        :display_type => BagProperty::DISPLAY_TYPE_RADIO, 
-#        :required => false, 
-#        :default_visibility => BagProperty::VISIBILITY_USERS,
-#        :sort => 155 
-#      )
-#      [
-#        ['Yes',10],
-#        ['No',20],
-#        ['Would like more information',30]
-#     ].each {|c| BagPropertyEnum.create(:bag_property_id => bp.id, :value => c[0], :name => c[0], :sort => c[1]) }
-#    puts 'Done'
-#    end
-#  end
 end
 
