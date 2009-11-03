@@ -29,7 +29,7 @@ module SalesforceMethods
     sf_user.interest_areas__c         = bag_value('interests')
     sf_user.license__c                   = bag_value('teaching_license')
     sf_user.licensed_subject_areas__c    = bag_value('subject_areas')
-    sf_user.twb_canada__c                = bag_value('twb_canada')
+    #sf_user.twb_canada__c                = bag_value('twb_canada')
     sf_user.years_teaching_experience__c = bag_value('yrs_teaching_experience')
     sf_user.employer__c                  = bag_value('organization')
 
