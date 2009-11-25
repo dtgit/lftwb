@@ -101,7 +101,7 @@ ul#nav li .dropdown .bottom{background:url(/images/nav_dropdown_bottom.png) no-r
 #translation img{margin:0 2px 2px;}
 #quote{color:#000000;float:right;font-size:29px;font-weight:800;left:-58px;line-height:34px;margin:0 200px;overflow:hidden;padding-bottom:10px;padding-top:15px;position:absolute;text-align:right;top:117px;width:760px;z-index:20;}
 #quote span{color:#FFCC33;}
-#donate{height:85px;left:32px;margin-left:399px;margin-top:448px;padding:0px 0 0;position:absolute;top:-50px;width:202px;visibility:hidden;}
+#donate{height:85px;left:3px;margin-left:1px;margin-top:123px;padding:0px 0 0;position:absolute;top:-50px;width:202px;}
 #highlight{height:145px;left:291px;margin-left:280px;margin-top:324px;padding:0;position:absolute;top:5px;width:260px;z-index:3;}
 #buttontext{height:70px;left:297px;margin-left:153px;margin-top:400px;padding:0px 0 0;position:absolute;top:4px;width:200px;z-index:3;visibility:hidden;}
 #lilman{height:117px;left:285px;margin-left:240px;margin-top:460px;padding:44px 0 0;position:absolute;top:-189px;width:435px;z-index:2;}
